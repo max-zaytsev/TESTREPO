@@ -1,7 +1,7 @@
 name: 🐛 Bug
 description: Report a bug 
 title: "[BUG]: "
-labels: ["bug", "helpwanted"]
+labels: ["bug", "helpw anted"]
 body:
   - type: checkboxes
     id: new-issue-checklist
