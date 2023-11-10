@@ -95,18 +95,3 @@ body:
       label: Aditional info
       description: |
         Paste any additional information here.
-  - type: markdown
-    attributes:
-      value: |
-        ## Debug logs:
-        <details>
-          <pre>[INSERT DEBUG OUTPUT HERE]</pre>
-        </details>
-  - type: markdown
-    attributes:
-      value: |
-        ## Debug logs:
-        <details>
-          ```[INSERT DEBUG OUTPUT HERE]
-          ```
-        </details>

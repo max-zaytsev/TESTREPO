@@ -109,10 +109,10 @@ body:
       description: |
         Please copy and paste any relevant log output.
       placeholder:
-        - type: markdown
+        "- type: markdown
           attributes:
           value: |
             ## Logs 
         - type: textarea
-          id: task-logs 
+          id: task-log " 
       render: yaml
