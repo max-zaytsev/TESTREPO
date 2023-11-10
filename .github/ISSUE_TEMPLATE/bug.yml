@@ -1,8 +1,13 @@
 name: 🐛 Bug
 description: Report a bug 
 title: "[BUG]: "
-labels: ["bug", "helpw anted"]
+labels: ["bug", "help wanted"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form if you'd like to report bug related to one of the 
+        tasks. [List of the tasks](https://github.com/Microsoft/azure-pipelines-tasks/tree/master/Tasks)
   - type: checkboxes
     id: new-issue-checklist
     attributes:
@@ -12,11 +17,6 @@ body:
       options:
         - label: I read [pipeline troubleshooting guide](https://docs.microsoft.com/vsts/build-release/actions/troubleshooting)
         - label: I checked [how to collect logs](https://learn.microsoft.com/azure/devops/pipelines/troubleshooting/review-logs?view=azure-devops)
-  - type: markdown
-    attributes:
-      value: |
-        Use this form if you'd like to report bug related to one of the 
-        tasks. [List of the tasks](https://github.com/Microsoft/azure-pipelines-tasks/tree/master/Tasks)
   - type: textarea
     id: what-happened
     attributes:
