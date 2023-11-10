@@ -102,3 +102,17 @@ body:
       label: Aditional info
       description: |
         Paste any additional information here
+  - type: textarea
+    id: yaml-definition
+    attributes:
+      label: Yaml definition
+      description: |
+        Please copy and paste any relevant log output.
+      placeholder:
+        - type: markdown
+          attributes:
+          value: |
+            ## Logs 
+        - type: textarea
+          id: task-logs 
+      render: yaml
