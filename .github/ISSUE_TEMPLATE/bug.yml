@@ -116,7 +116,7 @@ body:
     attributes:
       label: Repro steps
       description: |
-        Please provide repro steps or link to the code in a public GitHub repository that reproduces the issue or a minimal Yaml definition to reproduce the problem if possible.
+        Please provide repro steps or link to the code in a public GitHub repository that reproduces the issue, or a minimal Yaml definition to reproduce the problem if possible.
       placeholder: |
         # for example: https://github.com/some-public-repo
         # OR
