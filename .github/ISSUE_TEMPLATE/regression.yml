@@ -1,4 +1,4 @@
-name: 🤒 Regression
+name: 😱 Regression
 description: This used to work, but a change in the service/tasks broke it. (Please make sure you know the last known working version)
 title: "[REGRESSION]: "
 labels: ["regression", "bug"]
@@ -83,7 +83,16 @@ body:
   - type: textarea
     id: task-logs
     attributes:
-      label: Debug logs
+      label: Task logs
+      description: |
+        Please copy and paste any relevant log output.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: task-logs
+    attributes:
+      label: Task logs
       description: |
         Please copy and paste any relevant log output.
       render: shell
@@ -94,4 +103,12 @@ body:
     attributes:
       label: Aditional info
       description: |
-        Paste any additional information here
+        Paste any additional information here.
+  - type: markdown
+    label: Debug logs
+    attributes:
+      label: Task logs
+      value: |
+        <details>
+          <pre>[INSERT DEBUG OUTPUT HERE]</pre>
+        </details>
