@@ -19,15 +19,6 @@ body:
         - label: I read [pipeline troubleshooting guide](https://docs.microsoft.com/vsts/build-release/actions/troubleshooting)
         - label: I checked [how to collect logs](https://learn.microsoft.com/azure/devops/pipelines/troubleshooting/review-logs?view=azure-devops)
 
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: Issue Description
-      description: Tell us what you see, what did you expect to happen and how we can reproduce your issue?
-      value: "A bug happened!"
-    validations:
-      required: true
-
   - type: input
     id: task-name
     attributes:
@@ -39,6 +30,15 @@ body:
     attributes:
       label: Task version
       placeholder: x.x.x
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Issue Description
+      description: Tell us what you see, and what did you expect to happen?
+      value: "A bug happened!"
+    validations:
+      required: true
 
   #################### Environment details ####################
 
@@ -93,7 +93,7 @@ body:
     attributes:
       label: Relevant log output
       description: |
-        Please copy and paste any relevant log output.
+        Please copy and paste any relevant log output that contains the error message.
       render: shell
     validations:
       required: true
@@ -101,7 +101,7 @@ body:
   - type: textarea
     id: full-task-logs
     attributes:
-      label: Full task logs
+      label: Full task logs with system.debug enabled
       description: |
         Please copy and paste full task logs.
       value: |
@@ -109,14 +109,17 @@ body:
           <pre> [REPLACE THIS WITH YOUR INFORMATION] </pre>
         </details>
 
+  #################### Repro steps ####################
+
   - type: textarea
-    id: yaml-definition
+    id: repro-steps
     attributes:
-      label: Yaml definition
+      label: Repro steps
       description: |
-        Please provide a minimal Yaml definition to reproduce the problem if possible
+        Please provide repro steps or link to the code in a public GitHub repository that reproduces the issue or a minimal Yaml definition to reproduce the problem if possible.
       placeholder: |
-        # for example:
+        # for example: https://github.com/some-public-repo
+        # OR
         trigger:
         - master
         pool:
