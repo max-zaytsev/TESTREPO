@@ -1,30 +1,28 @@
-name: 🐛 Bug
-description: Something doesn't work as expected.
-title: "[BUG]: "
-labels: ["bug"]
+name: 🤒 Regression
+description: This used to work, but a change in the service/tasks broke it. (Please make sure you know the last known working version)
+title: "[REGRESSION]: "
+labels: ["regression", "bug"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Use this form if you would like to report a bug related to one of the 
-        tasks. [List of the tasks](https://github.com/Microsoft/azure-pipelines-tasks/tree/master/Tasks)
   - type: checkboxes
-    id: new-issue-checklist
+    id: new-regression-checklist
     attributes:
-      label: New issue checklist
+      label: New regression checklist
       description: |
         Please make sure you've completed the following tasks before submitting your issue. Thanks!
       options:
-        - label: I searched for [existing GitHub issues](https://github.com/fastlane/fastlane/issues)
-        - label: I read [pipeline troubleshooting guide](https://docs.microsoft.com/vsts/build-release/actions/troubleshooting)
-        - label: I checked [how to collect logs](https://learn.microsoft.com/azure/devops/pipelines/troubleshooting/review-logs?view=azure-devops)
+        - label: I have searched the [issues](
+  - type: markdown
+    attributes:
+      value: |
+        Use this form if you'd like to report bug related to one of the 
+        tasks. [List of the tasks](https://github.com/Microsoft/azure-pipelines-tasks/tree/master/Tasks)
   - type: textarea
     id: what-happened
     attributes:
-      label: Issue Description
+      label: Regression Description
       description: Also tell us, what did you expect to happen?
       placeholder: Tell us what you see!
-      value: "A bug happened!"
+      value: "A regression happened!"
     validations:
       required: true
   - type: input
@@ -32,23 +30,29 @@ body:
     attributes:
       label: Task name
   - type: input
-    id: task-version
+    id: breaking-task-version
     attributes:
-      label: Task version
+      label: Breaking task version
+      placeholder: x.x.x
+  - type: input
+    id: working-task-version
+    attributes:
+      label: Last working task version
       placeholder: x.x.x
   - type: markdown
     attributes:
       value: |
         ## Environment 
-  - type: checkboxes
+  - type: dropdown
     id: environment-type
     attributes:
       label: Environment type (Please select at least one enviroment where you face this issue)
       options:
-        - label: Self-Hosted
-        - label: Microsoft Hosted
-        - label: VMSS Pool
-        - label: Container
+        - Self-Hosted
+        - Microsoft Hosted
+        - VMSS Pool
+        - Container
+      default: Microsoft Hosted
   - type: dropdown
     id: azure-devops-type
     attributes:
@@ -96,9 +100,3 @@ body:
     attributes:
       value: |
         Checkout how to troubleshoot failures and collect debug logs: https://docs.microsoft.com/en-us/vsts/build-release/actions/troubleshooting
-  - type: textarea
-    id: extra-details
-    attributes:
-      label: Aditional info
-      description: |
-        Paste any additional information here
