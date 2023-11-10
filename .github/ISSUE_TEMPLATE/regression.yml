@@ -45,16 +45,15 @@ body:
     attributes:
       value: |
         ## Environment 
-  - type: dropdown
+  - type: checkboxes
     id: environment-type
     attributes:
       label: Environment type (Please select at least one enviroment where you face this issue)
       options:
-        - Self-Hosted
-        - Microsoft Hosted
-        - VMSS Pool
-        - Container
-      default: Microsoft Hosted
+        - label: Self-Hosted
+        - label: Microsoft Hosted
+        - label: VMSS Pool
+        - label: Container
   - type: dropdown
     id: azure-devops-type
     attributes:
