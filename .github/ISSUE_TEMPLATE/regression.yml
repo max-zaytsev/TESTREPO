@@ -90,15 +90,6 @@ body:
     validations:
       required: true
   - type: textarea
-    id: task-logs
-    attributes:
-      label: Task logs
-      description: |
-        Please copy and paste any relevant log output.
-      render: shell
-    validations:
-      required: true
-  - type: textarea
     id: extra-details
     attributes:
       label: Aditional info
@@ -110,4 +101,12 @@ body:
         ## Debug logs:
         <details>
           <pre>[INSERT DEBUG OUTPUT HERE]</pre>
+        </details>
+  - type: markdown
+    attributes:
+      value: |
+        ## Debug logs:
+        <details>
+          ```[INSERT DEBUG OUTPUT HERE]
+          ```
         </details>
