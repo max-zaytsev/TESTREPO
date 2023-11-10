@@ -10,7 +10,7 @@ body:
       description: |
         Please make sure you've completed the following tasks before submitting your issue. Thanks!
       options:
-        - label: I have searched the [issues](
+        - label: I have searched the
   - type: markdown
     attributes:
       value: |
