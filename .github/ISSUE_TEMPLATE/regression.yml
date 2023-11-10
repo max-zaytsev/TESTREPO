@@ -31,6 +31,7 @@ body:
     id: task-name
     attributes:
       label: Task name
+      placeholder: E.g. AzurePowerShell
   - type: input
     id: breaking-task-version
     attributes:
@@ -82,22 +83,15 @@ body:
   - type: textarea
     id: task-logs
     attributes:
-      label: Task log
+      label: Debug logs
       description: |
         Please copy and paste any relevant log output.
       render: shell
     validations:
       required: true
   - type: textarea
-    id: error-logs
+    id: extra-details
     attributes:
-      label: Relevant log output
+      label: Aditional info
       description: |
-        Insert error from the logs here for a quick overview
-      render: shell
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: |
-        Checkout how to troubleshoot failures and collect debug logs: https://docs.microsoft.com/en-us/vsts/build-release/actions/troubleshooting
+        Paste any additional information here

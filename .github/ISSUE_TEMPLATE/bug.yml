@@ -6,8 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this form if you would like to report a bug related to one of the 
-        tasks. [List of the tasks](https://github.com/Microsoft/azure-pipelines-tasks/tree/master/Tasks)
+        Use this form if you would like to report a bug related to one of the tasks. [List of the tasks](https://github.com/Microsoft/azure-pipelines-tasks/tree/master/Tasks)
   - type: checkboxes
     id: new-issue-checklist
     attributes:
@@ -31,6 +30,7 @@ body:
     id: task-name
     attributes:
       label: Task name
+      placeholder: E.g. AzurePowerShell
   - type: input
     id: task-version
     attributes:
