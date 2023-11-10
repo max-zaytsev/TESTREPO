@@ -107,12 +107,13 @@ body:
     attributes:
       label: Yaml definition
       description: |
-        Please copy and paste any relevant log output.
-      placeholder:
-        "- type: markdown
-          attributes:
-          value: |
-            ## Logs 
-        - type: textarea
-          id: task-log " 
-      render: yaml
+        Please provide minimal repro pipeline
+      placeholder: |
+        trigger:
+        - master
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+        - script: echo Hello, world!
+          displayName: 'Your step'
+      render: yml
