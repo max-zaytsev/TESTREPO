@@ -112,23 +112,12 @@ body:
         Please copy and paste full task logs.
       value: |
         <details>
-          <summary>SUCCESSFUL RUN</summary>
-          <pre> [REPLACE THIS WITH YOUR INFORMATION] </pre>
-        </details>
-
-        <details>
           <summary>UNSUCCESSFUL RUN</summary>
           <pre> [REPLACE THIS WITH YOUR INFORMATION] </pre>
         </details>
 
-  - type: textarea
-    id: full-task-logs-2
-    attributes:
-      label: Full task logs with system.debug enabled
-      description: |
-        Please copy and paste full task logs.
-      value: |
         <details>
+          <summary>SUCCESSFUL RUN</summary>
           <pre> [REPLACE THIS WITH YOUR INFORMATION] </pre>
         </details>
 
