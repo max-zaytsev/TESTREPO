@@ -29,6 +29,7 @@ stages:
   - job: JobB1
     pool:
       vmImage: ubuntu-latest
+    condition: eq(true, false)
 
     steps:
     - script: echo Hello, world!
