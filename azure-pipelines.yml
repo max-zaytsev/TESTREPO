@@ -26,3 +26,19 @@ stages:
       inputs:
         samplestring: 'Good'
 
+  - job: JobB1
+    pool:
+      name: TestTelemetry
+      #vmImage: ubuntu-latest
+
+    steps:
+    # - task: PowerShell@2
+    #   inputs:
+    #     targetType: 'inline'
+    #     script: |
+    #       # Write your PowerShell commands here.
+    #       Write-Host "Hello World"
+
+    - task: mycustomtask@1
+      inputs:
+        samplestring: 'Good'
