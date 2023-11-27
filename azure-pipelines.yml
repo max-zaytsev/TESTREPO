@@ -11,36 +11,12 @@ stages:
   jobs:
   - job: JobA1
     pool:
-      name: default
+      name: v-mazayt-windows
       #vmImage: ubuntu-latest
 
     steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
-  - job: JobA2
-    pool:
-      name: default
-      # vmImage: ubuntu-latest
-
-    steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
-
-- stage: StageB
-  jobs:
-  - job: JobB1
-    pool:
-      name: default
-      # vmImage: ubuntu-latest
-
-    steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
-  - job: JobB2
-    pool:
-      name: default
-      # vmImage: ubuntu-latest
-
-    steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
+    - script: |
+        echo 'Hello'
+    - task: mycustomtask@1
+      inputs:
+        samplestring: 'Good'
