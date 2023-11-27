@@ -15,6 +15,9 @@ stages:
       #vmImage: ubuntu-latest
 
     steps:
+    - script: |
+        echo 'Hello'
     - task: mycustomtask@1
       inputs:
         samplestring: 'Good'
+
