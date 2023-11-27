@@ -11,32 +11,10 @@ stages:
   jobs:
   - job: JobA1
     pool:
-      vmImage: ubuntu-latest
+      name: Default
+      #vmImage: ubuntu-latest
 
     steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
-  - job: JobA2
-    pool:
-      vmImage: ubuntu-latest
-
-    steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
-
-- stage: StageB
-  jobs:
-  - job: JobB1
-    pool:
-      vmImage: ubuntu-latest
-
-    steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
-  - job: JobB2
-    pool:
-      vmImage: ubuntu-latest
-
-    steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
+    - task: mycustomtask@1
+      inputs:
+        samplestring: 'Good'
