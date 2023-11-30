@@ -20,7 +20,7 @@ stages:
         targetType: 'inline'
         script: |
           # Write your PowerShell commands here.
-          
+          Write-Host "##vso[telemetry.publish area=%CustomArea;feature=MyCustom]text"
           Write-Host "Hello World"
 
     - task: mycustomtask@1
@@ -42,5 +42,5 @@ stages:
         targetType: 'inline'
         script: |
           # Write your PowerShell commands here.
-          
+          Write-Host "##vso[telemetry.publish area=%CustomArea;feature=MyCustom]text"
           Write-Host "Hello World"
