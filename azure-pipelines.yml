@@ -20,8 +20,27 @@ stages:
         targetType: 'inline'
         script: |
           # Write your PowerShell commands here.
-          Write-Host "##vso[telemetry.publish area=CustomArea;feature=MyCustom]text"
-          Write-Host "##vso[telemetry.publish area=CustomArea;feature=MyCustom]{"text":"json"}"
+
+          function Write-Telemetry {
+              [CmdletBinding()]
+              param(
+                  [string]$Area,
+                  [string]$Feature,
+                  [object]$Properties)
+
+              # The telemetry command was added in agent version 2.120.0.
+              [version]$agentVersion = $null
+              if ($env:AGENT_VERSION -and
+                  ([version]::TryParse($env:AGENT_VERSION, [ref]$agentVersion)) -and
+                  $agentVersion.CompareTo(([version]'2.120.0')) -ge 0) {
+
+                  Write-Host "##vso[telemetry.publish area=$Area;feature=$Feature]$(ConvertTo-Json -Depth 99 -Compress -InputObject $Properties)"
+              }
+          }
+
+          Write-Telemetry -Area 'CustomArea' -Feature 'CustomFeature' -Properties @{"foo"="foo value"}
+          #Write-Host "##vso[telemetry.publish area=CustomArea;feature=MyCustom]text"
+          #Write-Host "##vso[telemetry.publish area=CustomArea;feature=MyCustom]{"text":"json"}"
           Write-Host "Hello World"
 
     - task: mycustomtask@1
@@ -43,6 +62,25 @@ stages:
         targetType: 'inline'
         script: |
           # Write your PowerShell commands here.
-          Write-Host "##vso[telemetry.publish area=CustomArea;feature=MyCustom]text"
-          Write-Host "##vso[telemetry.publish area=CustomArea;feature=MyCustom]{"text":"json"}"
+
+          function Write-Telemetry {
+              [CmdletBinding()]
+              param(
+                  [string]$Area,
+                  [string]$Feature,
+                  [object]$Properties)
+
+              # The telemetry command was added in agent version 2.120.0.
+              [version]$agentVersion = $null
+              if ($env:AGENT_VERSION -and
+                  ([version]::TryParse($env:AGENT_VERSION, [ref]$agentVersion)) -and
+                  $agentVersion.CompareTo(([version]'2.120.0')) -ge 0) {
+
+                  Write-Host "##vso[telemetry.publish area=$Area;feature=$Feature]$(ConvertTo-Json -Depth 99 -Compress -InputObject $Properties)"
+              }
+          }
+
+          Write-Telemetry -Area 'CustomArea' -Feature 'CustomFeature' -Properties @{"foo"="foo value"}
+          #Write-Host "##vso[telemetry.publish area=CustomArea;feature=MyCustom]text"
+          #Write-Host "##vso[telemetry.publish area=CustomArea;feature=MyCustom]{"text":"json"}"
           Write-Host "Hello World"
